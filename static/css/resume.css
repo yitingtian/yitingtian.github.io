@@ -1,0 +1,70 @@
+
+#content{
+    margin-left:5%;
+    margin-right:5%;
+    height:100%;
+}
+
+#table{
+    width:83%;
+    float:left;
+}
+
+p{
+    margin:5px;
+}
+
+#aboutme{
+    margin-top:10px;
+    width:80%;
+    background:#7FFFD4;
+    border-radius:5px;
+    padding:10px;
+    float:left;
+}
+
+#edu{
+    margin-top:10px;
+    width:80%;
+    border-radius:5px;
+    padding:10px;
+    background:#FFEBCD;
+    float:left;
+}
+
+#workexp{
+    margin-top:10px;
+    width:80%;
+    background:#8FBC8F;
+    border-radius:5px;
+    padding:10px;
+    float:left;
+}
+
+#certifications{
+    margin-top:10px;
+    width:80%;
+    background:#ADD8E6;
+    border-radius:5px;
+    padding:10px;
+    float:left;
+}
+
+#skills{
+    margin-top:10px;
+    width:80%;
+    background:#FFFACD;
+    border-radius:5px;
+    padding:10px;
+    float:left;
+}
+
+#autobio{
+    margin-top:10px;
+    width:78%;
+    background:#DCDCDC;
+    border-radius:5px;
+    padding:20px;
+    float:left;
+    text-align:left;
+}

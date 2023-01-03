@@ -1,0 +1,116 @@
+{% extends 'BasePage.html' %}
+
+{% block pageTitle %}
+Resume
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/css/resume.css" />
+{% endblock %}
+
+{% block mainContent %}
+<div id="content">
+	<div id="table">
+		<table border="1 solid"  cellspacing="0" cellpadding="0" >
+			<tr>
+				<th rowspan="6">
+					<img src="/static/images/田奕葶證件照.jpg" style="width:100px;">
+				</th>
+				<td style="width:660.5px">田奕葶</td>
+			</tr>
+			<tr>
+				<td>目前任職 : 行政院農委會藥物毒物試驗所 研究助理</td>
+			</tr>
+			<tr>
+				<td>最高學歷 : 私立東海大學 食品科學系 碩士</td>
+			</tr>
+			<tr>
+				<td>所在地 : 台中市西區</td>
+			</tr>
+			<tr>
+				<td>電子信箱 : s1000158@gmail.com</td>
+			</tr>
+			<tr>
+				<td>連絡電話 : 0979191791</td>
+			</tr>
+		</table>
+	</div>
+	<div id="aboutme">
+		<p style="font-size:26px;">關於我</p>
+目前任職於台中霧峰的藥毒所,從就學時期到就業都從事於生物技術相關,從細胞到動物體系的分生試驗都熟悉,但隨著影像辨識及機器學習漸漸應用於生物技術領域,自己也想藉由學習Python程式來作為生技與後端程式應用的橋樑。
+	</div>
+	<div id="edu">
+		<p style="font-size:26px;">教育</p>
+		<table>
+			<tr>
+				<td>私立東海大學</td>
+				<td colspan="2">食品科學系 碩士 (2015/9~2018/1)</td>
+			</tr>
+			<tr>
+				<td>私立靜宜大學</td>
+				<td>食品營養學系暨生物技術組</td>
+				<td>學士 (2011/9~2014/6)</td>
+			</tr>
+		</table>
+	</div>
+	<div id="workexp">
+		<p style="font-size:26px;">工作經歷</p>
+		<table>
+			<tr>
+				<td colspan="2">行政院農委會藥物毒物試驗所</td>
+				<td>研究助理(2019/2~迄今)</td>
+			</tr>
+			<tr>
+				<td>國立中興大學</td>
+				<td>分子生物所</td>
+				<td>研究助理(2018/2~2018/11)</td>
+			</tr>
+		</table>
+	</div>
+	<div id="certifications">
+		<p style="font-size:26px;">證照</p>
+		<table>
+			<tr>
+				<th>英文證照 :</th>
+				<td>TOEIC 845、TOEFL ITP 557、BULATS CEF level : B2</td>
+			</tr>
+			<tr>
+				<th>程式證照 :</th>
+				<td>MTA : Introduction to Programming Using Python - Certified 2022</td>
+			</tr>
+		</table>
+	</div>
+	<div id="skills">
+		<p style="font-size:26px;">工作技能</p>
+		<table>
+			<tr>
+				<th>開發工具 </th>
+				<td>: PyCharm</td>
+			</tr>
+			<tr style="text-align:left">
+				<th>程式 </th>
+				<td>: Python、HTML、CSS、MySQL</td>
+			</tr>
+			<tr>
+				<th>生物技術 </th>
+				<td>: Cloning、Cell Culture、PCR、Real-time PCR、Southern blot、Western blot、ELISA</td>
+			</tr>
+		</table>
+	</div>
+	<div id="autobio">
+		<p style="font-size:26px;">自傳</p>
+		&emsp;&emsp;新北市淡水人,自從讀大學後就一直留在台中。大學與研究所專研於生物技術尤其分子生物層
+面,研究所期間改善了許多舊制的 SOP,將原本需要兩天的實驗改善到半天解決;在中興大學時也
+用不到半年時間找到前面五年助理找不到的基因序列;在藥毒所期間也針對實驗的 Troubleshooting
+避免許多不必要重做。因此對於解決問題的能力算是有自信的。<p></p>
+&emsp;&emsp;雖然各式各樣的實驗可以產生出大量的實驗數據,但若缺乏有效的後續分析及預判會大大降低
+這些數據的價值,因此除了統計軟體的之外,深度學習/機器學習應用於生物辨識的文獻也逐漸增
+加,這也成為了我學習程式的一大契機。<p></p>
+&emsp;&emsp;為了能夠成為兼具生物背景的軟體工程師,於 2022 年 1 月開始以 Python 語言去學習各種程式
+技能,包含 MySQL、爬蟲、網站架設(HTML/CSS、Flask、Django)、機器學習(OpenCV、Dlib、CNN、
+YOLO、 Tensorflow)。<p></p>
+&emsp;&emsp;雖然目前在程式工程這塊還並沒有工作經驗,但我對於自己上手新工作的能力是有自信的,希
+望能在後端工程為貴公司獻上我的能力。<p></p>
+	</div>
+</div>
+{% endblock %}

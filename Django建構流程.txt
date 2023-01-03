@@ -1,0 +1,53 @@
+mysql> create database mjdb default character set utf8 collate utf8_general_ci;
+mysql> grant all privileges on mjdb.* to 'myuser'@'%';
+mysql> flush privileges;
+
+python manage.py creatsuperuser
+Username (leave blank to use 's1000'): evetian
+Email address: s1000158@gmail.com
+password:820206eve
+
+Django建立application步驟:
+1.python manage.py startapp __(app名稱) -> 系統會幫你建立一個以app為名稱的資料夾
+    admin.py -> 設定資料庫呈現的模式，他跟models溝通，這個是會幫你註冊到後台系統
+                from .models import __(class名稱)
+                admin.site.register(__(class名稱))
+    models.py ->建構資料表型態 (建立資料表->欄位名稱)
+                class 自訂名稱(models.Model):
+                    name = models.CharField(max_length=50)
+                    xxx = models.
+
+                    class meta:
+                        db_table = '自定資料表名稱'
+    __init__.py -> 說明這個python資料表示一個套件
+    views.py -> 擔任控制者(controller)身分，將需求提共給前端的使用者，他會跟主網站的urls.py做呼應
+
+
+2.去MJ裡的MJ資料夾裡settings.py，33行INSTALLED_APPS = [] 加入新增的app名稱'xxx',
+3.去app的資料夾裡views.py定義一個def
+    def defname(request):
+    return render(request,'htmlname.html')
+4.在templates資料夾新增一個htmlname.html
+5.去MJ裡的MJ資料夾裡urls.py 去新增一個路徑，以方便從網址進去
+    from xxx.views import defname
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('自訂網址結尾/',defname),
+    ]
+6.去app的資料夾裡models.py建立資料表
+    class classname(models.Model):
+                    name = models.CharField(max_length=50)
+                    xxx = models.
+
+                    class meta:
+                        db_table = '自定資料表名稱'
+7.去app的資料夾裡admin.py後臺註冊
+    from .models import classname
+                admin.site.register(classname)
+8.在Terminal下python manage.py makemigrations
+              python manage.py migrate
+              python manage.py runserver
+
+
+
+
