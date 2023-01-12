@@ -1,0 +1,152 @@
+{% extends "BasePage.html" %}
+
+{% block pageTitle %}
+看診
+{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block mainContent %}
+<style>
+    .mainArea{
+        width:100%;
+        height:50%;
+        margin:0;
+    }
+    .diag{
+        width:50%;
+        height:100%;
+        background:#F0E68C;
+        float:left;
+    }
+    .diag table{
+        width:90%;
+        margin:0% 5% 0% 5%;
+        font-size:18;
+    }
+    .abstract{
+        width:50%;
+        height:100%;
+        background:#F0E68C;
+        float:left;
+    }
+
+    .examine{
+        width:100%;
+        height:50%;
+        background:#DB7093;
+        margin:0;
+    }
+    .examDate{
+        width:50%;
+        height:100%;
+        float:left;
+    }
+    .treat{
+        width:50%;
+        height:100%;
+        float:left;
+    }
+
+    .allergy{
+        width:100%;
+        height:10%;
+        background:#00FFFF;
+        float:left;
+    }
+
+    .note{
+        width:100%;
+        height:10%;
+        background:#008B8B;
+        float:left;
+    }
+    p{
+        margin:0;
+    }
+    div{
+        position:relatve;
+        margin:0;
+    }
+</style>
+<div class="mainArea">
+    <div class="diag">
+        <p style="font-weight:700; color:#ff0000; font-size:20; margin-left:5px;">診斷</p>
+        <table border="1px" cellpadding="0" cellspacing="0">
+            <tr>
+                <th align="left">疾病代碼</th>
+                <th>名稱</th>
+            </tr>
+            <tr>
+                <td>
+                    <select style="width:90%; margin-left:5px;" id="dropdown" onchange="select()">
+                        <option selected></option>
+                        <option value="某些傳染病和寄生蟲病">A00-B99</option>
+                        <option value="腫瘤">C00-D48</option>
+                        <option value="血液及造血器官疾病和某些涉及免疫系統的疾患">D50-D89</option>
+                        <option value="內分泌，營養和代謝疾病">E00-E90</option>
+                        <option value="精神和行為疾患">F00-F99</option>
+                        <option value="神經系統疾病">G00-G99</option>
+                        <option value="眼和附器疾病">H00-H59</option>
+                        <option value="耳和乳突疾病">H60-H95</option>
+                        <option value="循環系統疾病">I00-I99</option>
+                        <option value="呼吸系統疾病">J00-J99</option>
+                    </select>
+                </td>
+                <td>
+                    <h5 id="show">請選擇疾病代碼</h5>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="abstract">
+        <p>疾病摘要(主訴及簡短病史)</p>
+        <textarea style="width:98%;height:70%;margin:0px 5px 0px 5px;resize:none; "></textarea>
+    </div>
+<script>
+    function select(){
+        var x = document.getElementById("dropdown").value;
+        document.getElementById("show").innerHTML=x ;
+    }
+</script>
+</div>
+
+<div class="examine">
+    <p style="margin-left:5px; padding-top:3px;">檢查及治療摘要</p>
+    <div class="examDate">
+        <table border=1 style="width:95%;height:70%;margin:2px 5px 0px 5px;">
+            <tr style="height:10%;">
+                <td>檢查日期 : <input type="date"></td>
+            </tr>
+            <tr style="height:100%;">
+                <td style="height:90%;"><textarea rows="10" cols="75" style="resize:none;"></textarea></td>
+            </tr>
+        </table>
+    </div>
+    <div class="treat">
+        <table border=1 style="width:95%;height:70%;margin:0px 5px 0px 5px;">
+            <tr>
+                <td>最後醫令 : <input type="date"></td>
+            </tr>
+            <tr>
+                <td style="height:100%;"><textarea rows="10" cols="75" style="resize:none;"></textarea></td>
+            </tr>
+        </table>
+    </div>
+    </div>
+</div>
+
+<div class="allergy">
+    <table cellpadding="5px;">
+        <th>藥物過敏史</th>
+        <td><textarea rows="2" cols="50" style="resize:none"></textarea></td>
+    </table>
+</div>
+<div class="note">
+    <table cellpadding="5px;">
+        <th>注意事項</th>
+        <td><textarea rows="2" cols="50" style="resize:none"></textarea></td>
+    </table>
+</div>
+{% endblock %}

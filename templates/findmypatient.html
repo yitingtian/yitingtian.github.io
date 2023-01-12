@@ -1,0 +1,123 @@
+{% extends "BasePage.html" %}
+
+{% block pageTitle %}
+患者資料查詢
+{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block mainContent %}
+<style>
+    .basicInfo{
+        width:30%;
+        text-align:center;
+        margin-left:5%;
+        margin-top:11px;
+        float:left;
+    }
+    .basicInfo table{
+        width:100%;
+    }
+    .registrecord{
+        width:50%;
+        margin:5% 0% 0% 5%;
+        float:left;
+    }
+    .registrecord table{
+        width:100%;
+        text-align:center;
+    }
+</style>
+<div class="find">
+        {% if nosearch == 1 %}
+        <form a action="/findmypatient/" method="get">
+            <table border="0" align="center" cellpadding="10" cellspacing="0">
+                <tr>
+                    <th colspan="2">患者資料查詢</th>
+                </tr>
+                <tr>
+                    <td>病歷號</td>
+                    <td><input name="findnumber" type="text" placeholder="請輸入病歷號" required /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="查詢" /></td>
+                </tr>
+            </table>
+        </form>
+        {% else %}
+            {% if notfound == 1 %}
+                <div class="message">對不起，找不到患者資料，請重新查詢。</div>
+                <form a action="/findmypatient/" method="get">
+                    <table border="0" align="center" cellpadding="10" cellspacing="0">
+                        <tr>
+                            <th colspan="2">患者資料查詢</th>
+                        </tr>
+                        <tr>
+                            <td>病歷號</td>
+                            <td><input name="findnumber" type="text" placeholder="請輸入病歷號" required /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="submit" value="查詢" /></td>
+                        </tr>
+                    </table>
+                </form>
+            {% else %}
+                <div class="basicInfo">
+                    <p class="subject" align="left" style="margin-left:5%;">病歷號: {{num}}</p>
+                    {% for unit in details%}
+                    <table border="1" cellpadding="1" cellspacing="1">
+                        <tr>
+                            <td>姓名</td>
+                            <td>{{unit.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>出生日期</td>
+                            <td>{{unit.birthday}}</td>
+                        </tr>
+                        <tr>
+                            <td>性別</td>
+                            <td>{{unit.sex}}</td>
+                        </tr>
+                        <tr>
+                            <td>身分類別</td>
+                            <td>{{unit.Identity}}</td>
+                        </tr>
+                        <tr>
+                            <td>連絡電話</td>
+                            <td>{{unit.tel}}</td>
+                        </tr>
+                        <tr>
+                            <td>地址</td>
+                            <td>{{unit.address}}</td>
+                        </tr>
+                    </table>
+                    {% endfor %}
+                    <div style="height:20px;"></div>
+                    <a href="/findmypatient"><button>返回查詢</button></a>
+                </div>
+                <div class="registrecord">
+                    <table border="1px solid" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th colspan="4">掛號紀錄</th>
+                        </tr>
+                        <tr>
+                            <th>日期</th>
+                            <th>掛號類型</th>
+                            <th>主訴</th>
+                            <th>備註</th>
+                        </tr>
+                        <td>2023.01.01</td>
+                        <td>一般</td>
+                        <td>痛經症</td>
+                        <td>不敢針</td>
+                    </table>
+                </div>
+
+            {% endif %}
+        {% endif %}
+</div>
+
+
+
+{% endblock %}

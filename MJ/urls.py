@@ -17,11 +17,22 @@ from django.contrib import admin
 from django.urls import path
 
 from resume.views import Resume,home
-from register2.views import Register
+from regist.views import Register,Patients,Registermain,find,getNumber,Login,Logout,Consult
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('resume/',Resume),
     path('',home),
-    path('register/',Register)
+    path('register/',Register),
+    path('patients/',Patients),
+    path('registermain/',Registermain),
+    path('findmypatient/',find),
+    path('getnumber/',getNumber),
+    path('login/',Login),
+    path('logout/',Logout),
+    path('consult/',Consult),
+
+
+
 ]

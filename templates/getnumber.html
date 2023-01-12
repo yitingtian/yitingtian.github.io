@@ -1,0 +1,61 @@
+{% extends "BasePage.html" %}
+
+{% block pageTitle %}
+初診
+{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block mainContent %}
+<!--
+<script>
+    function getnumber() {
+        message=confirm('掛號完成，你的號碼是{{item.id}}');
+    }
+</script>
+-->
+<span style="align:center;">{{msg}}</span>
+{% for i in id %}
+        <span>你的候診號碼是: {{i.id}}</span>
+    {% endfor %}
+<form action="" method="post">
+    {% csrf_token %}
+    <table border="1px solid" cellpadding="0" cellspacing="0" align="center">
+        <tr>
+            <td><label>姓名</label></td>
+            <td><input type="text" name="name" value="" placeholder="請輸入" required></td>
+        </tr>
+        <tr>
+            <td><label>身分證號碼</label></td>
+            <td><input type="text" name="Idnumber" value="" placeholder="請輸入" required></td>
+        </tr>
+        <tr>
+            <td><label>出生日期</label></td>
+            <td><input type="date" name="birthday" value="" placeholder="請輸入" required></td>
+        </tr>
+        <tr>
+            <td><label>性別</label></td>
+            <td>
+                <input type="radio" name="sex" value="F" checked />女生
+                <input type="radio" name="sex" value="M" />男生
+            </td>
+        </tr>
+        <tr>
+            <td><label>掛號類型</label></td>
+            <td>
+                <select name="reIdentity" required>
+                          <option>健保</option>
+                          <option>自費</option>
+                          <option>押單</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="掛號" onclick="getnumber()">
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

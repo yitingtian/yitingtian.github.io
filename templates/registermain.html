@@ -1,0 +1,59 @@
+{% extends "BasePage.html" %}
+
+{% block pageTitle %}
+掛號首頁
+{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block mainContent %}
+<style>
+  .leftcube{
+      width:150px;
+      height:150px;
+      background:#FFD700;
+      margin:10% 0% 20% 28%;
+      float:left;
+      border-radius:20px;
+  }
+  .middlecube{
+      width:150px;
+      height:150px;
+      background:#FFD700;
+      margin:10% 5% 20% 5%;
+      float:left;
+      border-radius:20px;
+  }
+  .rightcube{
+      width:150px;
+      height:150px;
+      background:#FFD700;
+      margin:10% 0% 20% 0%;
+      float:left;
+      border-radius:20px;
+  }
+  .leftText{
+      Text-align:center;
+      padding-top:40%;
+
+  }
+  .middleText{
+      Text-align:center;
+      padding-top:40%;
+  }
+  .rightText{
+      Text-align:center;
+      padding-top:40%;
+  }
+</style>
+  <div class="leftcube">
+    <a href="/register"><div class="middleText">初診</div></a>
+  </div>
+  <div class="middlecube">
+    <a href="/getnumber"><div class="leftText">線上掛號</div></a>
+  </div>
+  <div class="rightcube">
+    <a href="/patients"><div class="rightText">候診名單</div></a>
+  </div>
+{% endblock %}

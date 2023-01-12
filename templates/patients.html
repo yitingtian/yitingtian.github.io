@@ -1,0 +1,37 @@
+{% extends "BasePage.html" %}
+
+{% block pageTitle %}
+掛號總表
+{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block mainContent %}
+<style>
+    .Area {
+        width:100%;
+        height:10%;
+        background:#BDB76B;
+        margin:2% 0% 2% 0%;
+        text-align:center;
+    }
+
+</style>
+<p style="margin-left:20%;">掛號總表</p>
+<div>
+    <table border="1px" style="width:50%; margin-left:20%;">
+        <tr>
+            <th>候診號碼</th>
+            <th>患者姓名</th>
+        </tr>
+        {% for item in patientsList %}
+        <tr class="Area">
+            <td ><p>{{item.id}}</p></td>
+            <td><p id="patientName">{{item.name}}</p></td>
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

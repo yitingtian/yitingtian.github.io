@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'resume',
-    'register2',
+    'regist',
 ]
 
 MIDDLEWARE = [

@@ -20,22 +20,23 @@
 
 		<div id="banner">
 
-			<a href="/"><div id="logo"></div></a>
+			<a href="/"><div id="logo" ></div></a>
 			<div id="menu">
 				<ul class="bannermenu">
 					<a href="/resume"><li class="menutxt">關於我</li></a>
-					<a href="/register"><li class="menutxt">掛號系統</li></a>
-					<a href="/product"><li class="menutxt">產品服務</li></a>
-					<a href="/message"><li class="menutxt">業務連絡</li></a>
-					<a href="/performance"><li class="menutxt">公司績效</li></a>
+					<a href="/registermain"><li class="menutxt">掛號系統</li></a>
+					<!--
+					<a href="#"><li class="menutxt">產品服務</li></a>
+					<a href="#"><li class="menutxt">業務連絡</li></a>
+					<a href="#"><li class="menutxt">公司績效</li></a>
+					-->
 					{% if request.session.isAlive %}
-
-						<a href="/member"><li class="menutxt">會員管理</li></a>
-						<a href="/myorder"><li class="menutxt">我的訂單</li></a>
-						<a href="/logout"><li class="menutxt">登出</li></a>
+						<a href="/findmypatient"><li class="logintxt">患者資料查詢</li></a>
+						<a href="/consult"><li class="logintxt">看診頁面</li></a>
+						<a href="/logout"><li class="logintxt">登出</li></a>
 
 					{% else %}
-						<a href="/login"><li class="menutxt">會員登入</li></a>
+						<a href="/login"><li class="menutxt">職員登入</li></a>
 					{% endif %}
 				</ul>
 			</div>
@@ -48,14 +49,18 @@
 
 		<div id="content">
 		{% block mainContent %}
-		<h1 id="welcome"> Hello! </h1>
+		<h1 id="welcome" > Hello! </h1>
 		<script>
 		var nickname = prompt("請問是誰在瀏覽 ","Visitor");
 			if (nickname != null) {
 			  document.getElementById("welcome").innerText =
-			  "Hello, " + nickname + "!";
+			  "Hello, " + nickname + "!"+" This is Eve Tian's Django demo";
 			}
 		</script>
+
+			<div class="imgArea" style="width:60%;height:50%; ">
+				<img src="/static/images/logo3.png" style="width:100%;height:400px;margin-left:30%;">
+			</div>
 		{% endblock %}
 
 		</div>
@@ -63,7 +68,7 @@
 	</div>
 
 	<div id="footer">
-		<span>COPYRIGHT ©2022 WATSON DESGIN.  ALL RIGHTS RESERVED.</span>
+		<span>COPYRIGHT ©2023 EVETIAN DESGIN.  ALL RIGHTS RESERVED.</span>
 	</div>
 
 </body>
